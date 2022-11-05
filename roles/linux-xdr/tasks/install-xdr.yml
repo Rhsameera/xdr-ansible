@@ -16,7 +16,24 @@
     group: root
     mode: 0755
   when: cytool.stat.exists == False
-
+  
+- name: Create Linux Conf file path /etc/panw
+  become: yes
+  become_method: sudo
+  command: 'mkdir -p {{conf.dir}}'
+  when: cytool.stat.exists == False
+  
+- name: Copy a Linux Conf file to host
+  become: yes
+  become_method: sudo
+  ansible.builtin.copy:
+    src: "{{conf.file}}"
+    dest: "{{conf.dir}}/{{conf.file}}"
+    owner: root
+    group: root
+    mode: 0755
+  when: cytool.stat.exists == False
+  
 - name: Is the Install File in the correct place? 
   stat:
     path: "{{install.dir}}/{{install.file}}"

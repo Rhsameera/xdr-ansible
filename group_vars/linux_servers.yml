@@ -1,6 +1,11 @@
 # file: group_vars/Ubuntu
 install:
-  file: linux-7-3-1.sh
+  file: cortex-7.8.1.76251.sh
   dir: /tmp
+conf:
+    file: cortex.conf
+    dir: /etc/panw
 xdr:
   dir: /opt/traps/bin
+kes:
+  dir: /opt/kaspersky

@@ -1,0 +1,3 @@
+---
+- name: Uninstall Kaspersky 
+  include_tasks: uninstall-kasperksy.yml

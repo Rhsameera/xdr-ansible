@@ -1,0 +1,26 @@
+---
+- name: Is KESL Already Installed? 
+  become: yes
+  become_method: sudo
+  stat:
+    path: "{{kes.dir}}/kesl/bin/kesl-control"
+  register: kesl
+
+- name: Uninstall KESL
+  become: yes
+  become_method: sudo
+  command: 'rpm -e kesl'
+  when: kesl.stat.exists
+  
+- name: Is KLNAGENT Already Installed? 
+  become: yes
+  become_method: sudo
+  stat:
+    path: "{{kes.dir}}/klnagent64/bin/klnagchk"
+  register: klnagent
+  
+- name: Uninstall klnagent
+  become: yes
+  become_method: sudo
+  command: 'rpm -e klnagent64'
+  when: klnagent.stat.exists
