@@ -1,0 +1,7 @@
+---
+- name: install selinux-policy-devel
+  become: yes
+  become_method: sudo
+  ansible.builtin.package:
+    name: selinux-policy-devel
+    state: present

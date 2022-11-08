@@ -1,0 +1,7 @@
+---
+- name: remove cortex
+  become: yes
+  become_method: sudo
+  ansible.builtin.package:
+    name: cortex-agent
+    state: absent

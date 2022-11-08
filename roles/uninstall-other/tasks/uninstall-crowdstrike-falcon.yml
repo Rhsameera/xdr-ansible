@@ -1,0 +1,7 @@
+---
+- name: remove falcon
+  become: yes
+  become_method: sudo
+  ansible.builtin.package:
+    name: falcon-sensor
+    state: absent

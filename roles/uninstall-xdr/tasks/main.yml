@@ -1,0 +1,3 @@
+---
+- name: Uninstall Cortex 
+  include_tasks: uninstall-cortex.yml

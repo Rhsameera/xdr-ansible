@@ -1,3 +1,4 @@
 ---
-- name: Uninstall Kaspersky 
+- name: Uninstall Other AVs 
   include_tasks: uninstall-kasperksy.yml
+  include_tasks: uninstall-crowdstrike-falcon.yml

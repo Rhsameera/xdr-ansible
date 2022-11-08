@@ -4,6 +4,7 @@
 - hosts: linux_servers
   gather_facts: False
   roles:
-    - role: linux-xdr
+    - role: install-dependencies
+    - role: uninstall-xdr
     - role: uninstall-other
-
+    - role: linux-xdr
