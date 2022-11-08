@@ -1,5 +1,5 @@
 # Installing Cortex XDR Agent with Ansible
-
+#Based on https://github.com/scottbrumley 's script
 ## Requirements
 - SSH Installed on remote hosts
 - Strongly Recommend using SSH Keys On Remote Hosts
